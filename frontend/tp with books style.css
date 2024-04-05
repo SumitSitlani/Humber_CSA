@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+    background-color: #82cdb4;
+    border: 1px solid #100e0e;
+    font-family: 'Georgia', serif;
+    align-self: start;
+    padding: 10px;
+}
+
+ul#booksList {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#booksList li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+ul#booksList li h2 {
+    color: #0077cc; /* Title color */
+    font-family: 'Georgia', serif;
+}
+
+ul#booksList li p {
+    font-size: 16px;
+    color: #666; /* Text color */
+}
+
+ul#booksList li p strong {
+    color: #333; /* Strong color */
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 0 auto;
+}
+
+form input[type="text"], form input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding around text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker shade of green on hover */
+}
+.addBookButton, .logoutButton{
+    display: inline-block;
+    background-color: #008cba;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.addBookButton:hover {
+    background-color: #007ba7;
+}
+
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates three columns */
+    grid-gap: 20px; /* Spacing between grid items */
+    margin-bottom: 20px; /* Spacing below the grid */
+}
+
+.book {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.book-cover {
+    width: 100%; /* Makes the image responsive within its container */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px;
+
+    
+}
+
+.edit-button, .delete-button, .logoutButton {
+    display: inline-block;
+    background-color:#4CAF50;;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+
+
+.edit-button:hover, .delete-button:hover {
+    background-color: #45a049;
+}
+
+
+
+div#addBookForm {
+    align-content: center;
+    display: none;
+}

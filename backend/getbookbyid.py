@@ -13,9 +13,6 @@ class DecimalEncoder(json.JSONEncoder):
         return super(DecimalEncoder, self).default(o)
 
 def convert_dynamodb_to_json(dynamodb_item):
-    """
-    Converts a DynamoDB JSON format item to a regular JSON format.
-    """
     deserializer = TypeDeserializer()
     if isinstance(dynamodb_item, dict):
         return {k: convert_dynamodb_to_json(v) for k, v in dynamodb_item.items()}
@@ -25,7 +22,6 @@ def convert_dynamodb_to_json(dynamodb_item):
         return dynamodb_item
 
 def lambda_handler(event, context):
-    # Extract the book ID from the path parameters
     if 'pathParameters' in event and 'id' in event['pathParameters']:
         book_id = event['pathParameters']['id']
     else:

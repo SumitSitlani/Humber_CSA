@@ -13,9 +13,6 @@ class DecimalEncoder(json.JSONEncoder):
         return super(DecimalEncoder, self).default(o)
 
 def convert_dynamodb_to_json(dynamodb_item):
-    """
-    Converts a DynamoDB JSON format item to a regular JSON format.
-    """
     deserializer = TypeDeserializer()
     if isinstance(dynamodb_item, dict):
         return {k: convert_dynamodb_to_json(v) for k, v in dynamodb_item.items()}
@@ -30,7 +27,7 @@ def lambda_handler(event, context):
 
     response = table.scan()
 
-    # Convert DynamoDB JSON format to regular JSON format
+
     json_response = [convert_dynamodb_to_json(item) for item in response['Items']]
 
     return {
